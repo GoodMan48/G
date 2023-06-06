@@ -38,7 +38,7 @@ public class Calculator {
        if(isArabian) {
            if (arabian <= 0) {
                throw new Exception("Римское число должно быть больше 0");
-           }  // конвертируем
+           } 
            result = Roman.convertToArabian(arabian);
        } else {
            result = String.valueOf(arabian);
