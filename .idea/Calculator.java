@@ -73,7 +73,7 @@ static String detectOperation(String expression) {
                 "LXXI","LXXII","LXXIII","LXXIV","LXXV","LXXVI","LXXVII","LXXVIII","LXXIX","LXXX",
                 "LXXXI","LXXXII","LXXXIII","LXXXIV","LXXXV","LXXXVI","LXXXVII","LXXXVIII","LXXXIX","XC",
                 "XCI","XCII","XCIII","XCIV","XCV","XCVI","XCVII","XCVIII","XCIX","C",};
-        public static boolean isArabian(String val){   // проверка на арабское число
+        public static boolean isArabian(String val){   
             for (String s : isArabian) {
                 if (val.equals(s)) {
                     return true;
