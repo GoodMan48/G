@@ -34,10 +34,8 @@ public class CalcString {
                 throw new Exception("Некорректный знак действия");
             }
             if(oper[0].length() > 10 && oper[1].length() > 10) throw new Exception("Длинна сторки не должна привышать 10 символов");
-            switch (oper[0]) {
-                case "1", "2", "3", "4", "5", "6", "7", "8", "9", "0" ->
-                        throw new Exception("Первым аргументом выражения, подаваемого на вход, должна быть строка");
-            }
+            if(Integer.parseInt(oper[0]) > 10 && Integer.parseInt(oper[1]) >10) throw new Exception("Калькулятор должен принимать на вход числа от 1 до 10 включительно");
+            if(Integer.parseInt(oper[0]) < 100) throw new Exception("Первым аргументом выражения, подаваемого на вход, должна быть строка");
 
             if (action == '*' || action == '/') {
                 if (oper[1].contains("\"")) throw new Exception("Строчку можно делить или умножать только на число");
