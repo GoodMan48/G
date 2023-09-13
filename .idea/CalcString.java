@@ -33,12 +33,13 @@ public class CalcString {
             } else {
                 throw new Exception("Некорректный знак действия");
             }
-            if(oper[0].length() > 10 && oper[1].length() > 10) throw new Exception("Длинна сторки не должна привышать 10 символов");
-            if(Integer.parseInt(oper[0]) > 10 && Integer.parseInt(oper[1]) >10) throw new Exception("Калькулятор должен принимать на вход числа от 1 до 10 включительно");
-            if(Integer.parseInt(oper[0]) < 100) throw new Exception("Первым аргументом выражения, подаваемого на вход, должна быть строка");
+            if(oper[0].length() > 10 || oper[1].length() > 10) throw new Exception("Длинна сторки не должна привышать 10 символов");
+
+            if(!oper[0].contains("\"")) throw new Exception("Первым аргументом выражения, подаваемого на вход, должна быть строка");
 
             if (action == '*' || action == '/') {
                 if (oper[1].contains("\"")) throw new Exception("Строчку можно делить или умножать только на число");
+                if(Integer.parseInt(oper[1]) > 10) throw new Exception("Калькулятор должен принимать на вход числа от 1 до 10 включительно");
             }
             for (int i = 0; i < oper.length; i++) {
                 oper[i] = oper[i].replace("\"", "");
